@@ -1,0 +1,13 @@
+{
+    "env": {
+        "node": true,
+        "es2021": true
+    },
+    "extends": "eslint:recommended",
+    "parser": "@babel/eslint-parser",
+    "rules": {
+        "no-console": 1,
+        "no-unused-vars": 0,
+        "no-useless-escape": 0
+    }
+}

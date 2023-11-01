@@ -1,0 +1,51 @@
+{
+  "name": "alerting-utils",
+  "version": "2.0.0",
+  "description": "Alerting utils",
+  "main": "lib/index.js",
+  "types": "lib/index.d.ts",
+  "scripts": {
+    "postinstall": "npm run prepublish",
+    "prepublish": "npm run prepublish:build && npm run prepublish:typeGen",
+    "prepublish:build": "npx rmdir-cli lib && babel src --out-dir lib",
+    "prepublish:typeGen": "npx typescript -d --allowJs --emitDeclarationOnly --outDir ./lib src/*.js",
+    "test": "npm run test:linter && npm run test:unit",
+    "test:linter": "eslint src",
+    "test:unit": "mocha --require @babel/register"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@bitbucket.org:ibasis/alerting-utils.git"
+  },
+  "keywords": [
+    "alerting-utils",
+    "ibasis-alerting"
+  ],
+  "author": "Keitaro Inc.",
+  "license": "ISC",
+  "devDependencies": {
+    "@babel/eslint-parser": "^7.13.10"
+  },
+  "dependencies": {
+    "@babel/cli": "7.12.8",
+    "@babel/core": "7.12.9",
+    "@babel/eslint-parser": "7.13.10",
+    "@babel/node": "7.12.6",
+    "@babel/plugin-proposal-class-properties": "7.12.1",
+    "@babel/preset-env": "7.12.7",
+    "@types/node": "14.14.35",
+    "chai": "4.2.0",
+    "cron": "1.8.2",
+    "dotenv-cli": "4.0.0",
+    "eslint": "7.14.0",
+    "md5": "2.3.0",
+    "mocha": "8.2.1",
+    "mongodb": "3.6.3",
+    "nodemon": "2.0.6",
+    "parcel-bundler": "1.12.4",
+    "rhea": "1.0.24",
+    "signals": "1.0.0",
+    "sinon": "9.2.1",
+    "uuid": "8.3.2"
+  }
+}
